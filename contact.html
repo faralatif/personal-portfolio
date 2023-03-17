@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Contact - Farha</title>
+  </head>
+
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Farha</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+        <span class="material-symbols-outlined">Sort</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="timeline.html"
+                >Timeline</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="workshops.html"
+                >Workshops</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="skills.html"
+                >skills</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html"
+                >Contact Me</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--Contact Me-->
+    <div class="container contactSec">
+      <div class="row heading">
+        <div class="col-lg-12">
+          <h1>Contact Me</h1>
+        </div>
+      </div>
+      <div class="row formSec">
+        <div class="col-lg-12">
+          <form name="submit-to-google-sheet" id="submit-form">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="Name"
+                placeholder="Name"
+                name="Name"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                id="Email"
+                placeholder="Email"
+                name="Email"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="Phone"
+                placeholder="Mobile Number"
+                name="Phone"
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                type="textarea"
+                class="form-control"
+                id="Message"
+                placeholder="Message"
+                name="Message"
+              >
+              </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            
+          </form>
+          <span id="msg" style="color: green;"></span>
+                    <span id="msg1" style="color: red;"></span>
+        </div>
+      </div>
+    </div>
+ 
+    <!--Footer-->
+    <div class="container footer">
+      <div class="row text-center">
+        <div class="col-lg-12">
+          <h1>Follow Me</h1>
+        </div>
+        <div class="col-lg-12">
+            <div class="d-flex justify-content-center">
+              <a href="https://www.facebook.com/profile.php?id=100090977146331" target="_blank"
+                ><i class="fa fa-facebook-square me-2" aria-hidden="true"></i
+              ></a>
+              <a href="https://www.instagram.com/faraa_latif/" target="_blank"
+                ><i class="fa fa-instagram me-2" aria-hidden="true"></i
+              ></a>
+              <a href="https://twitter.com/farabinthlatif/" target="_blank"
+                ><i class="fa fa-twitter-square me-2" aria-hidden="true"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/fara-latheef-22aa74214/" target="_blank"
+                ><i class="fa fa-linkedin-square me-2" aria-hidden="true"></i
+              ></a>
+              <a href="https://github.com/faralatif/ " target="_blank"
+                ><i class="fa fa-github-square me-2" aria-hidden="true"></i
+              ></a>
+              <a href="https://www.youtube.com/channel/UCwGEApIxVNXeOkHZJNW3c-g" target="_blank"
+                ><i class="fa fa-youtube-square me-2" aria-hidden="true"></i
+              ></a>
+            </div>
+          </div>
+        <div class="col-lg-12">
+          <p>Designed & Built by Farha</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Scripts-->
+    <script>
+      function validateForm() {
+        // Get the values of the input fields
+        var name = document.forms[0]["Name"].value;
+        var email = document.forms[0]["Email"].value;
+        var phone = document.forms[0]["Phone"].value;
+        var message = document.forms[0]["Message"].value;
+        // Check if the name is not empty
+        if (name == "") {
+          msg1.innerHTML = "Name must be filled out"
+          setTimeout(function(){
+                  msg1.innerHTML = ""
+                },5000)
+          return false;
+        }
+        //Check if the name contain any number
+        if (/\d/.test(name)){
+          msg1.innerHTML = "Name must be character"
+          setTimeout(function(){
+                  msg1.innerHTML = ""
+                },5000)
+          return false
+        }
+        // Check if the email is valid
+        var emailRegex = /\S+@\S+\.\S+/;
+        if (!emailRegex.test(email)) {
+          msg1.innerHTML = "Email must be a valid email address"
+          setTimeout(function(){
+                  msg1.innerHTML = ""
+                },5000)
+          return false;
+        }
+        // Check if the Subject is not empty 
+        if (phone == "") {
+          msg1.innerHTML = "Subject must be filled out"
+          setTimeout(function(){
+                  msg1.innerHTML = ""
+                },5000)
+          return false;
+        }
+        if (!/^\d{10}$/.test(phone)) {
+          msg1.innerHTML = "Invalid Mobile"
+          setTimeout(function(){
+                  msg1.innerHTML = ""
+                },5000)
+          return false;
+        }
+
+        // Check if the Message is not empty 
+        if (message == "") {
+          msg1.innerHTML = "Message must be filled out"
+          setTimeout(function(){
+                  msg1.innerHTML = ""
+                },5000)
+          return false;
+        }
+        // If all validations pass, return true to submit the form
+        return true;
+      }
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyY0SvH1CFtkRDnN9qVw9sXjXnInyoDk920AXBc1qxgsNXIXOuWepcOkc_swXsKzCmB/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById("msg")
+      
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        if(validateForm()){
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+              msg.innerHTML = "Sent Successfully"
+              setTimeout(function(){
+                msg.innerHTML = ""
+              },5000)
+              form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+          }
+        })
+      </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
